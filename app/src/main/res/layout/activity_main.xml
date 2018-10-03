@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#dddddd"
+    android:fillViewport="true"
+    tools:context="xyz.bmi.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+
+        android:background="#bbbbbb"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_height" />
+
+            <EditText
+                android:id="@+id/et_height"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                android:id="@+id/tv_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/iv_height"
+                android:layout_toStartOf="@id/et_height"
+                android:labelFor="@id/et_height"
+                android:text="@string/height" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_weight" />
+
+            <EditText
+                android:id="@+id/et_weight"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                android:id="@+id/tv_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/iv_weight"
+                android:layout_toStartOf="@id/et_weight"
+                android:labelFor="@id/et_weight"
+                android:text="@string/weight" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_sex" />
+
+            <Button
+                android:id="@+id/btn_sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="@string/doubt"
+
+                />
+
+            <ImageView
+                android:id="@+id/iv_sex_equal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/btn_sex"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_sex_equal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/iv_sex"
+                android:layout_toStartOf="@id/iv_sex_equal"
+                android:text="@string/sex" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_calc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="@string/calculate" />
+
+        <TextView
+            android:id="@+id/tv_bmi_value"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="@string/bmi_value"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/font_big_size" />
+
+        <TextView
+            android:id="@+id/tv_bmi_advice"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="@string/advice"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/font_big_size" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/MyTable.Title"
+                android:layout_marginTop="7dp"
+                android:text="@string/bmi_table" />
+
+            <TableRow android:layout_marginTop="7dp">
+
+                <TextView
+
+                    style="@style/MyTable.Title"
+                    android:text="@string/range" />
+
+                <TextView
+                    style="@style/MyTable.Title"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/bmi_category" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp">
+
+                <TextView
+                    style="@style/MyTable"
+                    android:text="@string/less20" />
+
+                <TextView
+                    style="@style/MyTable"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/category_less" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp">
+
+                <TextView
+                    style="@style/MyTable"
+                    android:text="@string/normal" />
+
+                <TextView
+                    style="@style/MyTable"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/category_normal" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp">
+
+                <TextView
+                    style="@style/MyTable"
+                    android:text="@string/over25" />
+
+                <TextView
+                    style="@style/MyTable"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/category_over" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+
+</ScrollView>

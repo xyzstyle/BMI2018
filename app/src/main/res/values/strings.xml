@@ -1,0 +1,93 @@
+<resources>
+    <string name="app_name">BMI</string>
+    <string name="bmi">BMI</string>
+    <string name="pic_desc">图片</string>
+    <string name="weight">体重（公斤）</string>
+    <string name="height">身高（厘米）</string>
+    <string name="waist">腰围（厘米）</string>
+    <string name="waist_fin">腰围（英寸）</string>
+    <string name="weight_flb">体重（磅）</string>
+    <string name="height_fin">身高（英寸）</string>
+    <string name="sex">性别:</string>
+    <string name="doubt">  ？ </string>
+    <string name="calculate">计算</string>
+    <string name="bmi_value">BMI值：%1$s</string>
+    <string name="whr_value">WHR值：%1$s</string>
+    <string name="advice">建议：%1$s</string>
+    <string name="bmi_table">BMI参考表格</string>
+    <string name="range">范围</string>
+    <string name="bmi_category">类型</string>
+    <string name="less20">少于20</string>
+    <string name="normal">20到25</string>
+    <string name="over25">大于25</string>
+    <string name="category_less">太轻了</string>
+    <string name="category_normal">正常</string>
+    <string name="category_over">太重了</string>
+    <string name="title_about">关于</string>
+    <string name="alert_dialog_ok">确定</string>
+    <string name="alert_dialog_cancel">取消</string>
+    <string name="to_imperial">改为英制单位</string>
+    <string name="to_metric">改为公制单位</string>
+    <string name="imperial_system">英制单位</string>
+    <string name="metric_system">公制单位</string>
+    <string name="select_unit">计量单位选择</string>
+    <string name="about">关于</string>
+    <string name="confirm_exit">确认退出吗？</string>
+    <string name="prompt">提示</string>
+    <string name="alert_dialog__msg">        加拿大智能手机供应商黑莓正式宣布与印度公司
+        签署智能手机许可协议，Opt公司将在印度为15亿潜在智能手机
+        用户生产和销售黑莓智能手机。去年11月，黑莓与Opt公司合作，
+        该公司于1995年在印度出售了第一部手机。 </string>
+
+    <string-array name="advice">
+        <item>你体型很棒哦</item>
+        <item>你该少吃点</item>
+        <item>你该多吃点</item>
+    </string-array>
+
+    <string name="please_input_message">请输入信息</string>
+    <string name="action_settings">设定</string>
+    <string name="unit_measure">计量单位</string>
+
+    <string name="fat_percentage">肥胖率</string>
+    <string name="extra_slim">很瘦</string>
+    <string name="healthy_slim">偏瘦</string>
+    <string name="waist_height_ratio">腰围身高比</string>
+    <string name="healthy">健康</string>
+    <string name="overweight">胖</string>
+    <string name="very_over">很胖</string>
+    <string name="morbidly_obese">巨肥</string>
+    <string name="value_extra_slim">0.34&#8211;</string>
+    <string name="value_healthy_slim">0.35&#8211;10.42</string>
+    <string name="value_healthy">0.43&#8211;0.52</string>
+    <string name="value_overweight">0.53&#8211;0.57</string>
+    <string name="value_very_over">0.58&#8211;0.62</string>
+    <string name="value_morbidly_obese">0.63+</string>
+    <string name="whr_table">WHR参考表</string>
+    <string name="ideal_waist">你的理想腰围：%1$s</string>
+
+
+    <string name="neck">颈围（厘米）</string>
+    <string name="hip">臀围（厘米）</string>
+    <string name="hip_fin">臀围（英寸）</string>
+    <string name="neck_fin">颈围（英寸）</string>
+    <string name="bfr_value">BFR值是：%1$s</string>
+    <string name="bfr_table_title">BFR表</string>
+    <string name="bfr_t1">BFR值范围</string>
+    <string name="bfr_t2">BFR等级</string>
+    <string name="bfr_m1">2%&#8211;5%</string>
+    <string name="bfr_m2">6%&#8211;13%</string>
+    <string name="bfr_m3">14&#8211;17%</string>
+    <string name="bfr_m4">18&#8211;25%</string>
+    <string name="bfr_m5">高于26%</string>
+    <string name="bfr_fm1">12&#8211;15%</string>
+    <string name="bfr_fm2">16&#8211;20%</string>
+    <string name="bfr_fm3">21&#8211;24%</string>
+    <string name="bfr_fm4">25&#8211;31%</string>
+    <string name="bfr_fm5">高于31%</string>
+    <string name="bfr_r1">需要脂肪</string>
+    <string name="bfr_r2">运动员体质</string>
+    <string name="bfr_r3">正常</string>
+    <string name="bfr_r4">马马虎虎</string>
+    <string name="bfr_r5">肥胖</string>
+</resources>

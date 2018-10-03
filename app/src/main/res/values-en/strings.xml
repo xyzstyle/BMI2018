@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="app_name">BMI</string>
+    <string name="action_settings">Settings</string>
+    <string name="bmi">BMI</string>
+    <string name="pic_desc">Picture</string>
+    <string name="weight">Weight（kg）</string>
+    <string name="height">Height（cm）</string>
+    <string name="waist">Waist（cm）</string>
+    <string name="waist_fin">Waist（in）</string>
+    <string name="weight_flb">Weight（lb）</string>
+    <string name="height_fin">Height（in）</string>
+    <string name="sex">Sex:</string>
+    <string name="doubt"> ？ </string>
+    <string name="calculate">calculate</string>
+    <string name="bmi_value">BMI is：%1$s</string>
+    <string name="whr_value">WHR：%1$s</string>
+    <string name="advice">Advice：%1$s</string>
+    <string name="bmi_table">BMI Table</string>
+    <string name="range">Range</string>
+    <string name="bmi_category">Category</string>
+    <string name="less20">less than 20</string>
+    <string name="normal">from 20 to 25</string>
+    <string name="over25">over 25</string>
+    <string name="category_less">Under Weight</string>
+    <string name="category_normal">Normal</string>
+    <string name="category_over">OverWeight</string>
+    <string name="title_about">about</string>
+    <string name="alert_dialog_ok">OK</string>
+    <string name="alert_dialog_cancel">Cancel</string>
+    <string name="unit_measure">unit of measure</string>
+    <string name="to_imperial">To Imperial SYS</string>
+    <string name="to_metric">To Metric SYS</string>
+    <string name="imperial_system">Imperial System</string>
+    <string name="metric_system">Metric System</string>
+    <string name="select_unit">Selection Unit of Measure</string>
+    <string name="about">About</string>
+    <string name="confirm_exit">Confirm Exit？</string>
+    <string name="prompt">Prompt</string>
+    <string name="alert_dialog__msg">     Canadian phone supplier BlackBerry officially
+        announced a licensing agreement with Indian company
+        Opt, which will produce and sell BlackBerry phones
+        in India for 1.5 billion potential phone users.
+        Last year in November,Blackberry and Opt company,
+        the company in 1995 in India sold its first mobile phone.
+    </string>
+
+
+    <string-array name="advice">
+        <item>your bmi is normal</item>
+        <item>you should eat less</item>
+        <item>you should eat more</item>
+    </string-array>
+    <string name="please_input_message">Please Enter Number</string>
+
+    <string name="neck">Neck（cm）</string>
+    <string name="hip">Hip（cm）</string>
+    <string name="neck_fin">Neck（in）</string>
+    <string name="hip_fin">Hip（in）</string>
+    <string name="waist_height_ratio">WHR</string>
+    <string name="fat_percentage">Fat PCT</string>
+    <string name="extra_slim">Extremely Slim</string>
+    <string name="healthy_slim">Healthy Slim</string>
+    <string name="healthy">Healthy</string>
+    <string name="overweight">Overweight</string>
+    <string name="very_over">Very Overweight</string>
+    <string name="morbidly_obese">Morbidly obese</string>
+    <string name="whr_table">WHR Table</string>
+    <string name="ideal_waist">Your Ideal Waist：%1$s</string>
+    <string name="bfr_value">BFR Value：%1$s</string>
+    <string name="bfr_table_title">BFR Table</string>
+    <string name="bfr_t1">BFR Value</string>
+    <string name="bfr_t2">BFR level</string>
+    <string name="bfr_m1">5%-</string>
+    <string name="bfr_m2">6%&#8211;13%</string>
+    <string name="bfr_m3">14&#8211;17%</string>
+    <string name="bfr_m4">18&#8211;25%</string>
+    <string name="bfr_m5">26%+</string>
+    <string name="bfr_fm1">15%-</string>
+    <string name="bfr_fm2">16&#8211;20%</string>
+    <string name="bfr_fm3">21&#8211;24%</string>
+    <string name="bfr_fm4">25&#8211;31%</string>
+    <string name="bfr_fm5">32%+</string>
+    <string name="bfr_r1">Essentail fat</string>
+    <string name="bfr_r2">Athletes</string>
+    <string name="bfr_r3">Fitness</string>
+    <string name="bfr_r4">Acceptable</string>
+    <string name="bfr_r5">Obese</string>
+
+</resources>
