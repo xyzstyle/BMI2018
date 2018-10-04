@@ -1,6 +1,8 @@
 package xyz.bmi;
 
+import android.content.DialogInterface;
 import android.content.res.Resources;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mCalcButton;
     private String[] mAdvices;
     private BMI mBmi;
+    private int mSystemTemp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,36 +80,65 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        if (mBmi.getSystem() == S.Unit.METRIC_SYSTEM) {
-            menu.findItem(R.id.menu_metric).setTitle(R.string.to_imperial);
-        }
-        if (mBmi.getSystem() == S.Unit.IMPERIAL_SYSTEM) {
-            menu.findItem(R.id.menu_metric).setTitle(R.string.to_metric);
-        }
-        return super.onPrepareOptionsMenu(menu);
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         if (item.getItemId() == R.id.menu_metric) {
+            new AlertDialog.Builder(MainActivity.this).setTitle(R.string.select_unit)
+                    .setIcon(android.R.drawable.ic_dialog_info)
+                    .setSingleChoiceItems(new String[]{getString(R.string.metric_system), getString(R.string.imperial_system)}, 0,
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    mSystemTemp = which;
+                                }
+                            })
+                    .setNegativeButton(android.R.string.cancel, null)
+                    .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            if (mSystemTemp == mBmi.getSystem())
+                                return;
+                            switch (mSystemTemp) {
+                                case S.Unit.METRIC_SYSTEM:
+                                    mBmi.setSystem(S.Unit.METRIC_SYSTEM);
+                                    mHeightTv.setText(R.string.height);
+                                    mWeightTv.setText(R.string.weight);
+                                    break;
+                                case S.Unit.IMPERIAL_SYSTEM:
+                                    mBmi.setSystem(S.Unit.IMPERIAL_SYSTEM);
+                                    mHeightTv.setText(R.string.height_fin);
+                                    mWeightTv.setText(R.string.weight_flb);
+                                    break;
+                                default:
+                            }
+                        }
+                    })
+                    .show();
 
-            switch (mBmi.getSystem()) {
-                case S.Unit.METRIC_SYSTEM:
-                    mBmi.setSystem(S.Unit.IMPERIAL_SYSTEM);
-                    mHeightTv.setText(R.string.height_fin);
-                    mWeightTv.setText(R.string.weight_flb);
-                    break;
-                case S.Unit.IMPERIAL_SYSTEM:
-                    mBmi.setSystem(S.Unit.METRIC_SYSTEM);
-                    mHeightTv.setText(R.string.height);
-                    mWeightTv.setText(R.string.weight);
-                    break;
-                default:
-            }
+
+        }
+        if (item.getItemId() == R.id.menu_about) {
+            new AlertDialog.Builder(this).setIcon(android.R.drawable.ic_dialog_info)
+                    .setTitle(R.string.title_about)
+                    .setMessage(R.string.alert_dialog__msg)
+                    .setPositiveButton(android.R.string.ok, null)
+                    .show();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this).setMessage(R.string.confirm_exit)
+                .setNegativeButton(android.R.string.cancel, null)
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        MainActivity.this.finish();
+                    }
+                }).show();
     }
 }
