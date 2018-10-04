@@ -17,17 +17,13 @@ public class BMI {
         mSystem = system;
     }
 
-    public double getHeight() {
-        return mHeight;
-    }
+
 
     public void setHeight(double height) {
         mHeight = height;
     }
 
-    public double getWeight() {
-        return mWeight;
-    }
+
 
     public void setWeight(double weight) {
         mWeight = weight;
@@ -46,7 +42,7 @@ public class BMI {
     }
 
     private double bmiOfImperial() {
-        return 703 * bmiOfMetric();
+        return 703 * bmiOfMetric()/10000;
     }
 
     public double getBmi() {
