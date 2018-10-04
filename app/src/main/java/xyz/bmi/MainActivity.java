@@ -3,7 +3,6 @@ package xyz.bmi;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
-import android.os.PersistableBundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,12 +12,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import xyz.util.BMI;
 import xyz.util.S;
 
 public class MainActivity extends AppCompatActivity {
-
 
     private EditText mHeightEt;
     private EditText mWeightEt;
@@ -31,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
     private BMI mBmi;
     private int mSystemTemp;
     public static final String PREFERENCE_NAME = "Setting";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
