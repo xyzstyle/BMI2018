@@ -2,9 +2,12 @@ package xyz.bmi;
 
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,8 +22,10 @@ public class MainActivity extends AppCompatActivity {
 
     private int mSystem;
     private int mSystemTemp;
-    private Fragment fragment;
+    private Fragment[] mFragments;
     public static final String PREFERENCE_NAME = "Setting";
+    private ViewPager mViewPager;
+    private TabLayout mTabLayout;
 
     //private static final String TAG = "MainActivity";
     @Override
@@ -29,15 +34,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         SharedPreferences sp = getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
         mSystem = sp.getInt("system", 0);
-        if (savedInstanceState == null) {
-            fragment = BmiFragment.NewInstance(mSystem);
-            FragmentManager manager = getSupportFragmentManager();
-            FragmentTransaction transaction = manager.beginTransaction();
-            transaction.add(R.id.frame, fragment);
-            transaction.commit();
-        } else {
-            fragment = getSupportFragmentManager().findFragmentById(R.id.frame);
+        mFragments = new Fragment[3];
+        for(int i=0;i<3;i++) {
+            mFragments[i]=BmiFragment.NewInstance(mSystem);
         }
+        MySimpleFragmentPagerAdapter mySimpleFragmentPagerAdapter = new MySimpleFragmentPagerAdapter(getSupportFragmentManager());
+        mViewPager = (ViewPager) findViewById(R.id.viewpager);
+        mViewPager.setAdapter(mySimpleFragmentPagerAdapter);
+        mTabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
+        mTabLayout.setupWithViewPager(mViewPager);
     }
 
 
@@ -77,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                             if (mSystemTemp == mSystem)
                                 return;
                             mSystem = mSystemTemp;
-                            ((BmiFragment) fragment).setSystem(mSystem);
+                            //((BmiFragment) fragment).setSystem(mSystem);
 
 
                         }
@@ -107,5 +112,26 @@ public class MainActivity extends AppCompatActivity {
                         MainActivity.this.finish();
                     }
                 }).show();
+    }
+
+    private class  MySimpleFragmentPagerAdapter extends FragmentPagerAdapter{
+        private CharSequence tabTitles[] = new CharSequence[]{getText(R.string.bmi), getText(R.string.waist_height_ratio), getText(R.string.fat_percentage)};
+        MySimpleFragmentPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+        @Override
+        public Fragment getItem(int position) {
+            return mFragments[position];
+        }
+
+        @Override
+        public int getCount() {
+            return mFragments.length;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return tabTitles[position];
+        }
     }
 }
