@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private int mSystem;
     private int mSystemTemp;
-    private Fragment fragment;
+    private Fragment mFragment;
     public static final String PREFERENCE_NAME = "Setting";
 
     //private static final String TAG = "MainActivity";
@@ -30,13 +30,13 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sp = getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
         mSystem = sp.getInt("system", 0);
         if (savedInstanceState == null) {
-            fragment = BmiFragment.NewInstance(mSystem);
+            mFragment = BmiFragment.NewInstance(mSystem);
             FragmentManager manager = getSupportFragmentManager();
             FragmentTransaction transaction = manager.beginTransaction();
-            transaction.add(R.id.frame, fragment);
+            transaction.add(R.id.frame, mFragment);
             transaction.commit();
         } else {
-            fragment = getSupportFragmentManager().findFragmentById(R.id.frame);
+            mFragment = getSupportFragmentManager().findFragmentById(R.id.frame);
         }
     }
 
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                             if (mSystemTemp == mSystem)
                                 return;
                             mSystem = mSystemTemp;
-                            ((BmiFragment) fragment).setSystem(mSystem);
+                            ((BmiFragment) mFragment).setSystem(mSystem);
 
 
                         }
